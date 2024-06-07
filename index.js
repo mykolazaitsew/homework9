@@ -27,7 +27,22 @@ const notifications = [
 
 const notification2 = task2(notifications);
 
-
+const task3 = (arr) => {
+  const groupCategory = arr.reduce((group, product) => {
+    const {type} = product;
+    group[type] = group[type] ?? [];
+    group[type].push(product);
+    return group;
+  }, {});
+  return groupCategory;
+};
+const data = [
+  { type: "food", name: "Pizza" },
+  { type: "drink", name: "Cocoa" },
+  { type: "souce", name: "Mustard" },
+];
+ 
 
 console.log(arr.filter(task1)); 
 console.log(notification2);
+console.log(task3(data));
