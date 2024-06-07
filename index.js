@@ -9,4 +9,25 @@ const task1 = (num) => {
   return num > 1;
 }
 
+const  task2 = (notifications) => {
+  return notifications.reduce((arr, notification) => {
+      const { source, text, date } = notification;
+      if (!arr[source]) {
+        arr[source] = [];
+      }
+      arr[source].push({ text, date });
+      return arr;
+  }, {});
+}
+const notifications = [
+  { source: "phone", text: "hi", date: "25.06.2024" },
+  { source: "PC", text: "sup", date: "26.06.2024" },
+  { source: "server", text: "whats new", date: "27.06.2024" },
+];
+
+const notification2 = task2(notifications);
+
+
+
 console.log(arr.filter(task1)); 
+console.log(notification2);
